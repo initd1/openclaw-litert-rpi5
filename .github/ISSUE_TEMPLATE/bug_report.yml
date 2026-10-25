@@ -1,0 +1,40 @@
+name: "🐛 Bug Report"
+description: "Report a bug or unexpected behavior in openclaw-litert-rpi5"
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting an issue! Please provide as much detail as possible.
+  - type: input
+    id: environment
+    attributes:
+      label: Hardware & OS Setup
+      description: "e.g., Raspberry Pi 5 (8GB), Debian Bookworm 64-bit, NVMe SSD"
+      placeholder: "Raspberry Pi 5 8GB / Raspberry Pi OS Bookworm 64-bit / PCIe NVMe"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps or command line invocations to reproduce the issue.
+      placeholder: |
+        1. Run `python src/server.py`
+        2. Execute `./scripts/test_endpoints.sh`
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Terminal Logs / Stack Trace
+      description: Copy and paste relevant logs or traceback output.
+      render: shell
