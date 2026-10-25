@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openclaw-litert-rpi5"
+version = "1.0.0"
+description = "FastAPI OpenAI-compatible bridge connecting OpenClaw AI agents to Google LiteRT on Raspberry Pi 5"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["openclaw", "litert", "gemma", "raspberry-pi-5", "edge-ai", "local-llm"]
+authors = [
+    { name = "OpenClaw Community" }
+]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "huggingface_hub[cli]>=0.23.0",
+    "litert-lm>=0.1.0"
+]
+
+[project.scripts]
+openclaw-litert-bridge = "src.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
