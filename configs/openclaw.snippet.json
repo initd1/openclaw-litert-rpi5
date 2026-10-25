@@ -1,0 +1,39 @@
+{
+  "memory": {
+    "search": {
+      "provider": "openai",
+      "remote": {
+        "baseUrl": "http://127.0.0",
+        "apiKey": "not-needed-for-local"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "litert-local": {
+        "baseUrl": "http://127.0.0",
+        "apiKey": "not-needed-for-local",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gemma-4-E2B-it",
+            "name": "Gemma 4 E2B Local",
+            "contextWindow": 16384
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "llm-task": {
+        "enabled": true,
+        "config": {
+          "defaultProvider": "litert-local",
+          "defaultModel": "gemma-4-E2B-it"
+        }
+      }
+    }
+  }
+}
